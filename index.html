@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CalcuType</title>
+    <link rel="stylesheet" href="css.css">
+    <!--JQuery core support-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!--JQuery UI support-->
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <!--MathJax support-->
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <!--Math.js support-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js"></script>
+    <!--Local JavaScript-->
+    <script src="javascript.js"></script>
+    <script src="tester.js"></script>
+</head>
+
+<body>
+    <!--The whole interface-->
+    <div id="scientific" class="interface">
+        <!--Calculator screen-->
+        <div id="scientificMonitor" class="monitor">
+            <h1 class="output"> </h1>
+            <h1 class="modeLabel">Scientific</h1>
+        </div>
+
+        <table id="scientificSuggestions" class="suggestions">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <!--Scientific calculator-->
+        <table id="scientificTable" class="table">
+            <tr>
+                <td class="key" data-value="clear">clr</td>
+                <td class="key" data-value="caps">caps</td>
+                <td class="key" data-value="shift">shift</td>
+                <td class="key" data-value="back">&#8592;</td>
+                <td class="key" data-value="backword">&#8612;</td>
+                <td class="key" data-value="space">&#9251;</td>
+                <td class="key" data-value="(">(</td>
+                <td class="key" data-value=")">)</td>
+                <td class="key" data-value="[">[</td>
+                <td class="key" data-value="]">]</td>
+                <td class="key" data-value="\">\</td>
+                <td class="key" data-value="/">/</td>
+                <td class="key" data-value="mode">mode</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="+">+</td>
+                <td class="key" data-value="-">-</td>
+                <td class="key" data-value="x">x</td>
+                <td class="key" data-value="divide">÷</td>
+                <td class="key" data-value="%">%</td>
+                <td class="key" data-value="root">\(\sqrt{x}\)</td>
+                <td class="key" data-value="squared">\(x^{2}\)</td>
+                <td class="key" data-value="log">\(\log{x}\)</td>
+                <td class="key" data-value="ln">ln</td>
+                <td class="key" data-value="pi">\(\pi\)</td>
+                <td class="key" data-value="sine">\(sinx\)</td>
+                <td class="key" data-value="cosine">\(cosx\)</td>
+                <td class="key" data-value="tangent">\(tanx\)</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="plusMinus">( - )</td>
+                <td class="key" data-value=".">.</td>
+                <td class="key" data-value="0">0</td>
+                <td class="key" data-value="1">1</td>
+                <td class="key" data-value="2">2</td>
+                <td class="key" data-value="3">3</td>
+                <td class="key" data-value="4">4</td>
+                <td class="key" data-value="5">5</td>
+                <td class="key" data-value="6">6</td>
+                <td class="key" data-value="7">7</td>
+                <td class="key" data-value="8">8</td>
+                <td class="key" data-value="9">9</td>
+                <td class="key" data-value="null"></td>
+            </tr>
+            <tr>
+                <td class="key" data-value=".">.</td>
+                <td class="key" data-value=",">,</td>
+                <td class="key" data-value=";">;</td>
+                <td class="key" data-value=":">:</td>
+                <td class="key" data-value="?">?</td>
+                <td class="key" data-value="!">!</td>
+                <td class="key" data-value="~">~</td>
+                <td class="key" data-value="W">@</td>
+                <td class="key" data-value="#">#</td>
+                <td class="key" data-value="$">$</td>
+                <td class="key" data-value="&">&amp;</td>
+                <td class="key" data-value="<">&#60;</td>
+                <td class="key" data-value=">">&#62;</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="A">A</td>
+                <td class="key" data-value="B">B</td>
+                <td class="key" data-value="C">C</td>
+                <td class="key" data-value="D">D</td>
+                <td class="key" data-value="E">E</td>
+                <td class="key" data-value="F">F</td>
+                <td class="key" data-value="G">G</td>
+                <td class="key" data-value="H">H</td>
+                <td class="key" data-value="I">I</td>
+                <td class="key" data-value="J">J</td>
+                <td class="key" data-value="K">K</td>
+                <td class="key" data-value="L">L</td>
+                <td class="key" data-value="M">M</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="N">N</td>
+                <td class="key" data-value="O">O</td>
+                <td class="key" data-value="P">P</td>
+                <td class="key" data-value="Q">Q</td>
+                <td class="key" data-value="R">R</td>
+                <td class="key" data-value="S">S</td>
+                <td class="key" data-value="T">T</td>
+                <td class="key" data-value="U">U</td>
+                <td class="key" data-value="V">V</td>
+                <td class="key" data-value="W">W</td>
+                <td class="key" data-value="X">X</td>
+                <td class="key" data-value="Y">Y</td>
+                <td class="key" data-value="Z">Z</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--Simple calculator-->
+    <div id="simple" class="selected interface">
+        <div id="simpleMonitor" class="monitor">
+            <h1 class="output"></h1>
+            <h1 class="modeLabel">Simple</h1>
+        </div>
+
+        <table id="simpleSuggestions" class="suggestions">
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table id="simpleTable" class="table">
+            <tr>
+                <td class="key" data-value="clear">clr</td>
+                <td class="key" data-value=".">.</td>
+                <td class="key" data-value="plusMinus">( - )</td>
+                <td class="key" data-value="mode">mode</td>
+                <td class="key" data-value="back">&#8592;</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="0">0</td>
+                <td class="key" data-value="1">1</td>
+                <td class="key" data-value="2">2</td>
+                <td class="key" data-value="3">3</td>
+                <td class="key" data-value="4">4</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="5">5</td>
+                <td class="key" data-value="6">6</td>
+                <td class="key" data-value="7">7</td>
+                <td class="key" data-value="8">8</td>
+                <td class="key" data-value="9">9</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="+">+</td>
+                <td class="key" data-value="-">-</td>
+                <td class="key" data-value="x">x</td>
+                <td class="key" data-value="divide">÷</td>
+                <td class="key" data-value="%">%</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="root">\(\sqrt{x}\)</td>
+                <td class="key" data-value="log">\(\log{x}\)</td>
+                <td class="key" data-value="ln">ln</td>
+                <td class="key" data-value="(">(</td>
+                <td class="key" data-value=")">)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--Advanced calculator-->
+    <div id="advanced" class="interface">
+        <div id="advancedMonitor" class="monitor">
+            <h1 class="output"></h1>
+            <h1 class="modeLabel">Advanced</h1>
+        </div>
+
+        <table id="advancedSuggestions" class="suggestions">
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+
+        <table id="advancedTable" class="table">
+            <tr>
+                <td class="key" data-value="clear">clr</td>
+                <td class="key" data-value=".">.</td>
+                <td class="key" data-value="plusMinus">( - )</td>
+                <td class="key" data-value="%">%</td>
+                <td class="key" data-value="mode">mode</td>
+                <td class="key" data-value="back">&#8592;</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="0">0</td>
+                <td class="key" data-value="1">1</td>
+                <td class="key" data-value="2">2</td>
+                <td class="key" data-value="3">3</td>
+                <td class="key" data-value="4">4</td>
+                <td class="key" data-value="+">+</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="5">5</td>
+                <td class="key" data-value="6">6</td>
+                <td class="key" data-value="7">7</td>
+                <td class="key" data-value="8">8</td>
+                <td class="key" data-value="9">9</td>
+                <td class="key" data-value="-">-</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="root">\(\sqrt{x}\)</td>
+                <td class="key" data-value="squared">\(x^{2}\)</td>
+                <td class="key" data-value="xPow">\(x^{y}\)</td>
+                <td class="key" data-value="log">\(\log{x}\)</td>
+                <td class="key" data-value="ln">ln</td>
+                <td class="key" data-value="x">x</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="sine">\(\sin{x}\)</td>
+                <td class="key" data-value="cosine">\(\cos{x}\)</td>
+                <td class="key" data-value="tangent">\(\tan{x}\)</td>
+                <td class="key" data-value="pi">\(\pi\)</td>
+                <td class="key" data-value="e">e</td>
+                <td class="key" data-value="divide">÷</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="invSine">\(\csc{x}\)</td>
+                <td class="key" data-value="invCosine">\(\sec{x}\)</td>
+                <td class="key" data-value="invTangent">\(\cot{x}\)</td>
+                <td class="key" data-value="absValue">|x|</td>
+                <td class="key" data-value="(">(</td>
+                <td class="key" data-value=")">)</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--Alphabet calculator-->
+    <div id="alpha" class="interface">
+        <div id="alphaMonitor" class="monitor">
+            <h1 class="output"></h1>
+            <h1 class="modeLabel">Alphabet</h1>
+        </div>
+
+        <table id="alphaSuggestions" class="suggestions">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table id="alphaLetters" class="letters">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table id="alphaTable" class="table">
+            <tr>
+                <td class="key" data-value="clear">clr</td>
+                <td class="key" data-value="caps">caps</td>
+                <td class="key" data-value="shift">shift</td>
+                <td class="key" data-value="back">&#8592;</td>
+                <td class="key" data-value="backword">&#8612;</td>
+                <td class="key" data-value="space">&#9251;</td>
+                <td class="key" data-value="mode">mode</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="A">A</td>
+                <td class="key" data-value="B">B</td>
+                <td class="key" data-value="C">C</td>
+                <td class="key" data-value="D">D</td>
+                <td class="key" data-value="E">E</td>
+                <td class="key" data-value="F">F</td>
+                <td class="key" data-value="G">G</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="H">H</td>
+                <td class="key" data-value="I">I</td>
+                <td class="key" data-value="J">J</td>
+                <td class="key" data-value="K">K</td>
+                <td class="key" data-value="L">L</td>
+                <td class="key" data-value="M">M</td>
+                <td class="key" data-value="N">N</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="O">O</td>
+                <td class="key" data-value="P">P</td>
+                <td class="key" data-value="Q">Q</td>
+                <td class="key" data-value="R">R</td>
+                <td class="key" data-value="S">S</td>
+                <td class="key" data-value="T">T</td>
+                <td class="key" data-value="U">U</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="V">V</td>
+                <td class="key" data-value="W">W</td>
+                <td class="key" data-value="X">X</td>
+                <td class="key" data-value="Y">Y</td>
+                <td class="key" data-value="Z">Z</td>
+                <td class="key" data-value=".">.</td>
+                <td class="key" data-value=",">,</td>
+            </tr>
+            <tr>
+                <td class="key" data-value=";">;</td>
+                <td class="key" data-value=":">:</td>
+                <td class="key" data-value="?">?</td>
+                <td class="key" data-value="!">!</td>
+                <td class="key" data-value="@">@</td>
+                <td class="key" data-value="#">#</td>
+                <td class="key" data-value="&">&amp;</td>
+            </tr>
+            <tr>
+                <td class="key" data-value="$">$</td>
+                <td class="key" data-value="*">*</td>
+                <td class="key" data-value="(">(</td>
+                <td class="key" data-value=")">)</td>
+                <td class="key" data-value="\">\</td>
+                <td class="key" data-value="/">/</td>
+                <td class="key" data-value="quotes">"</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

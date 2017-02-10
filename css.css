@@ -1,0 +1,221 @@
+body {
+    font-family: "Chalkboard";
+    font-size: 16px;
+}
+
+
+/* Output specifications */
+
+.output {
+    position: absolute;
+    font-size: 24px;
+    color: ivory;
+    display: inline;
+    left: 10px;
+}
+
+
+/* Mode label specifications */
+
+.modeLabel {
+    position: absolute;
+    font-size: 12px;
+    color: ivory;
+    display: inline;
+}
+
+#simple .modeLabel {
+    left: 240px;
+    top: 75px;
+}
+
+#advanced .modeLabel {
+    left: 290px;
+    top: 80px;
+}
+
+#alpha .modeLabel {
+    left: 315px;
+    top: 85px;
+}
+
+#scientific .modeLabel {
+    left: 620px;
+    top: 105px;
+}
+
+
+/* Suggestions specifications */
+
+.suggestions table {
+    border-radius: 5px;
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+.suggestions td {
+    background-color: #D7D9DA;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#simpleSuggestions td {
+    width: 200px;
+    height: 40px;
+}
+
+#advancedSuggestions td {
+    width: 300px;
+    height: 50px;
+}
+
+#alphaSuggestions td {
+    width: 120px;
+    height: 40px;
+}
+
+#scientificSuggestions td {
+    width: 220px;
+    height: 50px;
+}
+
+#simpleSuggestions {
+    top: 115px;
+    left: 35px;
+}
+
+#advancedSuggestions {
+    top: 120px;
+    left: 25px;
+}
+
+#alphaSuggestions {
+    top: 125px;
+}
+
+#scientificSuggestions {
+    top: 145px;
+}
+
+
+/* Letter suggestions */
+
+.letters table {
+    border-collapse: separate;
+    border-spacing: 20px;
+}
+
+.letters td {
+    background-color: #AAAFAF;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#alphaLetters {
+    top: 175px;
+}
+
+#alphaLetters td {
+    width: 120px;
+    height: 20px;
+}
+
+
+/* Interfaces */
+
+.interface {
+    position: absolute;
+    background-color: #B18667;
+    border-radius: 10px;
+}
+
+#simple {
+    width: 300px;
+    height: 500px;
+}
+
+#advanced {
+    width: 375px;
+    height: 575px;
+}
+
+#alpha {
+    width: 400px;
+    height: 650px;
+}
+
+#scientific {
+    width: 700px;
+    height: 600px;
+}
+
+
+/* Monitors */
+
+.monitor {
+    position: absolute;
+    background-color: #494946;
+    border-radius: 10px;
+}
+
+#simpleMonitor {
+    width: 285px;
+    height: 100px;
+    left: 7px;
+    top: 10px;
+}
+
+#advancedMonitor {
+    width: 350px;
+    height: 105px;
+    left: 10px;
+    top: 10px;
+}
+
+#alphaMonitor {
+    width: 375px;
+    height: 110px;
+    left: 10px;
+    top: 15px;
+}
+
+#scientificMonitor {
+    width: 680px;
+    height: 130px;
+    left: 10px;
+    top: 10px;
+}
+
+
+/* Table properties */
+
+table {
+    border-collapse: separate;
+    position: absolute;
+    border-spacing: 10px;
+}
+
+td.key {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 80px;
+    text-align: center;
+    background-color: #CBCBBE;
+    width: 50px;
+}
+
+#simpleTable {
+    top: 175px;
+}
+
+#advancedTable {
+    top: 190px;
+}
+
+#alphaTable {
+    top: 210px;
+}
+
+#scientificTable {
+    top: 210px;
+}
